@@ -217,4 +217,8 @@ const styles = StyleSheet.create({
         cardThumbnail: {
           transform: [{scale: 0.2}]
       },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> f9f2137855eaf325be7bef80612462039d1767ef
