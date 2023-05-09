@@ -5,27 +5,29 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style = {styles.container}>
-        <View style = {styles.cardContainer}>
-          <View style = {styles.cardImageContainer}>
-            <Image style = {styles.cardImage}
-                   source = {require('./user.png')}/>
-          </View>
-          <View>
-            <Text style = {styles.cardName}>
-              John Doe
-            </Text>
-          </View>
-          <View style = {styles.cardOccupationContainer}>
-            <Text style = {styles.cardOccupation}>
-              React Native Developer
-            </Text>
-          </View>
-          <View>
-            <Text style = {styles.cardDescription}>
-              John is a really great JavaScript developer. He
-              loves using JS to build React Native applications
-              for iOS and Android.
-            </Text>
+        <View style = {[styles.flexContainer]}>
+          <View style = {[{flex: 1}, styles.cardContainer]}>
+            <View style = {styles.cardImageContainer}>
+              <Image style = {styles.cardImage}
+                    source = {require('./user.png')}/>
+            </View>
+            <View>
+              <Text style = {styles.cardName}>
+                John Doe
+              </Text>
+            </View>
+            <View style = {styles.cardOccupationContainer}>
+              <Text style = {styles.cardOccupation}>
+                React Native Developer
+              </Text>
+            </View>
+            <View>
+              <Text style = {styles.cardDescription}>
+                John is a really great JavaScript developer. He
+                loves using JS to build React Native applications
+                for iOS and Android.
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -40,6 +42,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  flexContainer: {
+    width: 150,
+    height: 150,
+    borderWidth: 1,
+    margin: 10,
+    flexDirection: 'row'
   },
   cardContainer: {
     alignItems: 'center',
