@@ -41,7 +41,7 @@ const ProfileCard = (props) => {
   return (
     <TouchableHighlight onPress={onPress}> 
       <View style={[containerStyles]}>
-        <View style={styles.cardImageContainer}>
+        <View style={[{flex: 1}, styles.cardImageContainer]}>
           <Image style={styles.cardImage} source={image}/>
         </View>
         <View>
@@ -90,19 +90,36 @@ export default class App extends Component {
   
   render() {
     const list = this.state.data.map(function(item, index) { 
-      const { image, name, occupation, description, showThumbnail } = item;
-      return <ProfileCard key={'card-' + index}
-                   image={image}
-                   name={name}
-                   occupation={occupation}
-                   description={description}
-                   onPress={this.handleProfileCardPress.bind(this, index)}
-                   showThumbnail={showThumbnail}/>
-    }, this);
+        const { image, name, occupation, description, showThumbnail } = item;
+        return <ProfileCard key={'card-' + index}
+                    image={image}
+                    name={name}
+                    occupation={occupation}
+                    description={description}
+                    onPress={this.handleProfileCardPress.bind(this, index)}
+                    showThumbnail={showThumbnail}/>
+  }, this);
 
     return (
       <View style={styles.container}>
-        {list} 
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
+        <View style = {styles.flexContainer}>
+          {list} 
+        </View>
       </View>
     );
   }
@@ -112,9 +129,14 @@ const profileCardColor = 'dodgerblue';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 2,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    flexContainer: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignItems: 'auto'
     },
     /*
       Adds a drop shadow to the card container based on the platform
